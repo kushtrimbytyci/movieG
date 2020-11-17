@@ -26,29 +26,29 @@ const Video = (props) => {
     <Fragment>
       {props.location.state === undefined ? null : (
         <div
-          className='video-container'
+          className="video-container"
           style={{ backgroundColor: `${profileCon.backgroundColor}` }}
         >
-          <div className='video'>
-            <video width='100%' height='30%' controls>
-              <source src={props.location.state.link} type='video/mp4' />
-              <source src={props.location.state.link} type='video/ogg' />
+          <div className="video">
+            <video width="100%" height="30%" controls>
+              <source src={props.location.state.link} type="video/mp4" />
+              <source src={props.location.state.link} type="video/ogg" />
               Your browser does not support the video tag.
             </video>
           </div>
-          <div className='description'>
+          <div className="description">
             <div
-              className='description-image'
+              className="description-image"
               style={{ background: `url(${props.location.state.src})` }}
             ></div>
-            <div className='title-description'>
+            <div className="title-description">
               <h3>{props.location.state.title}</h3>
               <h6>{props.location.state.desc}</h6>
             </div>
           </div>
-          <div className='may-like'>
+          <div className="may-like">
             <span>You may like</span>
-            <div className='may-like-items'>
+            <div className="may-like-items">
               {gen.length === 0
                 ? null
                 : gen.map((e) => (

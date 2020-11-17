@@ -2,16 +2,22 @@ import React, { useReducer } from "react";
 import authReducer from "./authReducer";
 import AuthContext from "./authContext";
 import axios from "axios";
-import { LOGIN, SET_ERROR, LOAD_USER, LOGOUT, CLEAR_ERROR,LOGMEIN } from "../types";
+import {
+  LOGIN,
+  SET_ERROR,
+  LOAD_USER,
+  LOGOUT,
+  CLEAR_ERROR,
+  LOGMEIN,
+} from "../types";
 import defaultHeader from "../../helpers/axiosDefault";
-
 
 const AuthState = (props) => {
   const initialState = {
     token: localStorage.getItem("token"),
     isAuthenticated: false,
     error: "",
-    loggedIn:false
+    loggedIn: false,
   };
   const [state, dispatch] = useReducer(authReducer, initialState);
 
@@ -36,16 +42,13 @@ const AuthState = (props) => {
       try {
         await axios.get("/api/me");
         dispatch({ type: LOAD_USER });
-      } catch (error) {
-      }
+      } catch (error) {}
     }
   };
 
   const logout = () => {
     localStorage.clear("token");
     dispatch({ type: LOGOUT });
-    
-
   };
 
   const setError = (error) => {
@@ -54,13 +57,13 @@ const AuthState = (props) => {
       dispatch({ type: CLEAR_ERROR });
     }, 3000);
   };
-  const logmein = ()=>{
-    dispatch({type:LOGMEIN})
-  }
+  const logmein = () => {
+    dispatch({ type: LOGMEIN });
+  };
 
   return (
     <AuthContext.Provider
-      value={{ ...state, login, loadUser, logout, setError,logmein }}
+      value={{ ...state, login, loadUser, logout, setError, logmein }}
     >
       {props.children}
     </AuthContext.Provider>

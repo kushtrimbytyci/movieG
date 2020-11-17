@@ -1,8 +1,7 @@
-const mongoose =require('mongoose')
+const mongoose = require("mongoose");
 
 const FeatureSchema = new mongoose.Schema({
-    imgurl:String
-})
+  imgurl: String,
+});
 
-
-module.exports = mongoose.model('feature',FeatureSchema)
+module.exports = mongoose.model("feature", FeatureSchema);

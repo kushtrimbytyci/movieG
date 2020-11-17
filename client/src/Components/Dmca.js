@@ -2,9 +2,9 @@ import React from "react";
 
 const Dmca = () => {
   return (
-    <div className='dmca'>
+    <div className="dmca">
       <h2>GoMovie.site</h2>
-      <h5 className='dmca-h5'>
+      <h5 className="dmca-h5">
         Disclaimer: GoMovie.site is not in anyway associated with 123movies,
         Putlocker, Fmovies, Xmovies8, Onlinemovies, Watchfree sites. We do not
         host any videos on GoMovie.site. GoMovie.site is absolutely legal and

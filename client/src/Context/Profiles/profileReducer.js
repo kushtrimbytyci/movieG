@@ -1,4 +1,9 @@
-import { SET_PROFILE, CLEAR_PROFILE, CHANGE_BACKGROUND,CHANGE_TOGGLE } from "../types";
+import {
+  SET_PROFILE,
+  CLEAR_PROFILE,
+  CHANGE_BACKGROUND,
+  CHANGE_TOGGLE,
+} from "../types";
 
 const profileReducer = (state, action) => {
   switch (action.type) {
@@ -8,8 +13,8 @@ const profileReducer = (state, action) => {
       return { ...state, profiles: null };
     case CHANGE_BACKGROUND:
       return { ...state, backgroundColor: action.payload };
-      case CHANGE_TOGGLE:
-      return {...state,toggle:!state.toggle}
+    case CHANGE_TOGGLE:
+      return { ...state, toggle: !state.toggle };
 
     default:
       return { ...state };

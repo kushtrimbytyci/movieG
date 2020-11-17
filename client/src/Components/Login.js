@@ -43,30 +43,29 @@ const Login = (props) => {
     }
   };
 
-  
   return (
-    <div className='login'>
-      <div className='login2'>
+    <div className="login">
+      <div className="login2">
         <Form onSubmit={handleSubmit}>
           <FormGroup>
             <ControlLabel>Username</ControlLabel>
-            <FormControl name='email' onChange={handleUser} />
+            <FormControl name="email" onChange={handleUser} />
             <HelpBlock>Required</HelpBlock>
           </FormGroup>
           <FormGroup>
             <ControlLabel>Password</ControlLabel>
             <FormControl
-              name='password'
-              type='password'
+              name="password"
+              type="password"
               onChange={handleUser}
             />
           </FormGroup>
           <FormGroup>
             <ButtonToolbar>
-              <Button appearance='primary' type='submit'>
+              <Button appearance="primary" type="submit">
                 Submit
               </Button>
-              <Button appearance='default'>Cancel</Button>
+              <Button appearance="default">Cancel</Button>
             </ButtonToolbar>
           </FormGroup>
         </Form>
